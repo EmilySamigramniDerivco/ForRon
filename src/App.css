@@ -43,13 +43,13 @@ body { font-family: 'Segoe UI', sans-serif; background: #fff0f6; }
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
   z-index: 1000;
-  display: flex;
-  flex-direction: column;
+  /* Always scrollable, never clipped */
+  overflow-y: auto !important;
+  max-height: 100vh !important;
+  display: block !important;
   padding-top: 3.5rem;
   animation: slideIn 0.7s;
   transition: left 0.4s cubic-bezier(.7,1.7,.5,1), box-shadow 0.3s, background 0.3s;
-  overflow-y: auto;
-  max-height: 100vh;
 }
 .menu.menu-open {
   left: 0;
@@ -79,6 +79,11 @@ body { font-family: 'Segoe UI', sans-serif; background: #fff0f6; }
   transition: background 0.2s, color 0.2s, transform 0.13s, box-shadow 0.2s;
   letter-spacing: 0.5px;
 }
+/* Hide Don't Forget menu item by class or bell icon (adjust selector as needed) */
+.menu li.dont-forget,
+.menu li:has(svg[data-icon='bell']) {
+  display: none !important;
+}
 .menu li:hover {
   background: #fff0f6;
   color: #ffb6b9;
@@ -97,12 +102,12 @@ main { margin-top: 2rem; }
   animation: fadeIn 1.2s;
 }
 
-/* --- Home page images: neat, rounded, bordered, shadowed --- */
+/* --- Home page images: small, neat, rounded, bordered, shadowed --- */
 .home-image {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
-  border-radius: 18px;
+  border-radius: 16px;
   border: 2px solid #ffb6b9;
   box-shadow: 0 2px 8px #fae3d9;
   background: #fff0f6;
