@@ -48,6 +48,8 @@ body { font-family: 'Segoe UI', sans-serif; background: #fff0f6; }
   padding-top: 3.5rem;
   animation: slideIn 0.7s;
   transition: left 0.4s cubic-bezier(.7,1.7,.5,1), box-shadow 0.3s, background 0.3s;
+  overflow-y: auto;
+  max-height: 100vh;
 }
 .menu.menu-open {
   left: 0;
@@ -94,6 +96,25 @@ main { margin-top: 2rem; }
   color: #a94442;
   animation: fadeIn 1.2s;
 }
+
+/* --- Home page images: neat, rounded, bordered, shadowed --- */
+.home-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 2px solid #ffb6b9;
+  box-shadow: 0 2px 8px #fae3d9;
+  background: #fff0f6;
+  margin: 0.5rem auto;
+  display: block;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.home-image:hover {
+  box-shadow: 0 6px 24px #ffb6b9;
+  transform: scale(1.05) rotate(-2deg);
+}
+
 .photo-gallery {
   display: flex;
   justify-content: center;
@@ -120,7 +141,84 @@ main { margin-top: 2rem; }
   margin-top: 1.5rem;
   font-size: 1.2rem;
 }
-/* ...existing code... (all your current CSS remains unchanged up to the end) ... */
+
+/* --- Prettier, playful buttons --- */
+button, .fancy-btn {
+  background: linear-gradient(135deg, #ffb6b9 60%, #fae3d9 100%);
+  color: #a94442;
+  border: 2px solid #fae3d9;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px #fae3d9;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.7rem 1.5rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+button:hover, .fancy-btn:hover {
+  background: linear-gradient(135deg, #fae3d9 60%, #ffb6b9 100%);
+  color: #ffb6b9;
+  box-shadow: 0 6px 24px #ffb6b9;
+  transform: scale(1.05);
+}
+
+/* --- Timeline Add Event Form --- */
+.timeline-add-form, .add-event-form {
+  background: #fff0f6;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px #fae3d9;
+  padding: 1.2rem 1rem;
+  margin: 1.5rem auto 1rem auto;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.timeline-add-form input, .timeline-add-form textarea, .add-event-form input, .add-event-form textarea {
+  border-radius: 12px;
+  border: 1.5px solid #ffb6b9;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  background: #fff;
+  margin-bottom: 0.5rem;
+}
+
+/* --- 100 Reasons I Love You --- */
+.reasons-list {
+  background: linear-gradient(135deg, #fae3d9 0%, #ffb6b9 100%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(255,182,185,0.18);
+  padding: 2rem 1.2rem 2.5rem 1.2rem;
+  margin: 1.5rem auto 2rem auto;
+  max-width: 600px;
+  color: #a94442;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.reasons-list li {
+  background: #fff0f6;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #fae3d9;
+  padding: 0.9rem 1.2rem;
+  font-size: 1.08rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  list-style: decimal inside;
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+.reasons-list li:nth-child(100) {
+  background: #ffb6b9;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 16px #fae3d9;
+}
+.reasons-list li:hover {
+  box-shadow: 0 6px 24px #ffb6b9;
+  transform: scale(1.03);
+}
 
 /* --- Mobile-friendly album and timeline photo styles --- */
 @media (max-width: 600px) {
