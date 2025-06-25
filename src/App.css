@@ -103,30 +103,7 @@ main { margin-top: 2rem; }
   animation: fadeIn 1.2s;
 }
 
-/* --- Home page images: make smaller for perfect fit --- */
-.home-image {
-  width: 56px;
-  height: 56px;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 2px solid #ffb6b9;
-  box-shadow: 0 2px 8px #fae3d9;
-  background: #fff0f6;
-  margin: 0.5rem auto;
-  display: block;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.home-image:hover {
-  box-shadow: 0 6px 24px #ffb6b9;
-  transform: scale(1.05) rotate(-2deg);
-}
-
-.photo-gallery {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
+/* --- Home page images: original style (120px, .photo-placeholder) --- */
 .photo-gallery img.photo-placeholder {
   width: 120px;
   height: 120px;
