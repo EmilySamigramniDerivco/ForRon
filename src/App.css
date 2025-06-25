@@ -79,9 +79,10 @@ body { font-family: 'Segoe UI', sans-serif; background: #fff0f6; }
   transition: background 0.2s, color 0.2s, transform 0.13s, box-shadow 0.2s;
   letter-spacing: 0.5px;
 }
-/* Hide Don't Forget menu item by class or bell icon (adjust selector as needed) */
+/* Hide Don't Forget menu item by class, icon, or position */
 .menu li.dont-forget,
-.menu li:has(svg[data-icon='bell']) {
+.menu li:has(svg[data-icon='bell']),
+.menu ul li:nth-child(6) {
   display: none !important;
 }
 .menu li:hover {
@@ -102,12 +103,12 @@ main { margin-top: 2rem; }
   animation: fadeIn 1.2s;
 }
 
-/* --- Home page images: small, neat, rounded, bordered, shadowed --- */
+/* --- Home page images: make smaller for perfect fit --- */
 .home-image {
-  width: 80px;
-  height: 80px;
+  width: 56px;
+  height: 56px;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 14px;
   border: 2px solid #ffb6b9;
   box-shadow: 0 2px 8px #fae3d9;
   background: #fff0f6;
